@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "all_annual_reports",
+  "info": {
+    "singularName": "annual-reports",
+    "pluralName": "all-annual-reports",
+    "displayName": "Annual reports"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true,
+      "maxLength": 250,
+      "unique": true
+    },
+    "UploadFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    }
+  }
+}

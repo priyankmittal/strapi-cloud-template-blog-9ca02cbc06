@@ -513,6 +513,121 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiAnnualReportsAnnualReports
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'all_annual_reports';
+  info: {
+    singularName: 'annual-reports';
+    pluralName: 'all-annual-reports';
+    displayName: 'Annual reports';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    UploadFile: Schema.Attribute.Media<'files', true> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::annual-reports.annual-reports'
+    >;
+  };
+}
+
+export interface ApiBoardtalkBoardtalk extends Struct.CollectionTypeSchema {
+  collectionName: 'boardtalks';
+  info: {
+    singularName: 'boardtalk';
+    pluralName: 'boardtalks';
+    displayName: 'Boardtalk';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    Content: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'default';
+        }
+      >;
+    IssuuDirectLink: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::boardtalk.boardtalk'
+    >;
+  };
+}
+
+export interface ApiBoardtalkInsertsBoardtalkInserts
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'all_boardtalk_inserts';
+  info: {
+    singularName: 'boardtalk-inserts';
+    pluralName: 'all-boardtalk-inserts';
+    displayName: 'Boardtalk inserts';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
+    UploadFile: Schema.Attribute.Media<'files', true> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::boardtalk-inserts.boardtalk-inserts'
+    >;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -568,6 +683,10 @@ export interface ApiNewsNews extends Struct.CollectionTypeSchema {
           preset: 'default';
         }
       >;
+    Subheading: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 250;
+      }>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -956,6 +1075,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
+      'api::annual-reports.annual-reports': ApiAnnualReportsAnnualReports;
+      'api::boardtalk.boardtalk': ApiBoardtalkBoardtalk;
+      'api::boardtalk-inserts.boardtalk-inserts': ApiBoardtalkInsertsBoardtalkInserts;
       'api::global.global': ApiGlobalGlobal;
       'api::news.news': ApiNewsNews;
       'admin::permission': AdminPermission;

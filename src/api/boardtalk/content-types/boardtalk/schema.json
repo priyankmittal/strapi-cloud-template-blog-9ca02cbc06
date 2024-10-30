@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "allnews",
+  "collectionName": "boardtalks",
   "info": {
-    "singularName": "news",
-    "pluralName": "allnews",
-    "displayName": "News",
-    "description": ""
+    "singularName": "boardtalk",
+    "pluralName": "boardtalks",
+    "displayName": "Boardtalk"
   },
   "options": {
     "draftAndPublish": true
@@ -18,14 +17,6 @@
       "unique": true,
       "maxLength": 250
     },
-    "HeadImage": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "Content": {
       "type": "customField",
       "options": {
@@ -34,9 +25,9 @@
       "required": true,
       "customField": "plugin::ckeditor5.CKEditor"
     },
-    "Subheading": {
+    "IssuuDirectLink": {
       "type": "string",
-      "required": false,
+      "required": true,
       "maxLength": 250
     }
   }
