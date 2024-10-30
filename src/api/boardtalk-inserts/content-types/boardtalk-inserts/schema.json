@@ -19,11 +19,15 @@
       "unique": false
     },
     "UploadFile": {
-      "allowedTypes": [
-        "files"
-      ],
       "type": "media",
       "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
+    },
+    "PublishDate": {
+      "type": "date",
       "required": true
     }
   }

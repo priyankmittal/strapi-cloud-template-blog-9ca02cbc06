@@ -613,6 +613,7 @@ export interface ApiBoardtalkInsertsBoardtalkInserts
       }>;
     UploadFile: Schema.Attribute.Media<'files', true> &
       Schema.Attribute.Required;
+    PublishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
