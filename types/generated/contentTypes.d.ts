@@ -554,6 +554,7 @@ export interface ApiBoardtalkBoardtalk extends Struct.CollectionTypeSchema {
     singularName: 'boardtalk';
     pluralName: 'boardtalks';
     displayName: 'Boardtalk';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -578,6 +579,9 @@ export interface ApiBoardtalkBoardtalk extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
+    UploadFIle: Schema.Attribute.Media<'files', true> &
+      Schema.Attribute.Required;
+    PublishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;

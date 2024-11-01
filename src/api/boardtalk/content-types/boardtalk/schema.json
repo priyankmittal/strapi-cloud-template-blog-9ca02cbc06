@@ -4,7 +4,8 @@
   "info": {
     "singularName": "boardtalk",
     "pluralName": "boardtalks",
-    "displayName": "Boardtalk"
+    "displayName": "Boardtalk",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,6 +30,18 @@
       "type": "string",
       "required": true,
       "maxLength": 250
+    },
+    "UploadFIle": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
+    },
+    "PublishDate": {
+      "type": "date",
+      "required": true
     }
   }
 }
