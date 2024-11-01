@@ -579,7 +579,7 @@ export interface ApiBoardtalkBoardtalk extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
-    UploadFIle: Schema.Attribute.Media<'files', true> &
+    UploadFile: Schema.Attribute.Media<'files', true> &
       Schema.Attribute.Required;
     PublishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;

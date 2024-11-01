@@ -31,13 +31,13 @@
       "required": true,
       "maxLength": 250
     },
-    "UploadFIle": {
-      "allowedTypes": [
-        "files"
-      ],
+    "UploadFile": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     },
     "PublishDate": {
       "type": "date",
