@@ -42,6 +42,19 @@
     "PublishDate": {
       "type": "date",
       "required": true
+    },
+    "IssuuEmbedCode": {
+      "type": "text",
+      "required": true
+    },
+    "FileContent": {
+      "type": "text",
+      "required": true
+    },
+    "IsFeatured": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }
