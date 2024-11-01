@@ -50,11 +50,6 @@
     "FileContent": {
       "type": "text",
       "required": true
-    },
-    "IsFeatured": {
-      "type": "boolean",
-      "default": false,
-      "required": false
     }
   }
 }

@@ -38,6 +38,10 @@
       "type": "string",
       "required": false,
       "maxLength": 250
+    },
+    "IsFeaturedNews": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

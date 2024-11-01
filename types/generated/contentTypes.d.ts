@@ -584,7 +584,6 @@ export interface ApiBoardtalkBoardtalk extends Struct.CollectionTypeSchema {
     PublishDate: Schema.Attribute.Date & Schema.Attribute.Required;
     IssuuEmbedCode: Schema.Attribute.Text & Schema.Attribute.Required;
     FileContent: Schema.Attribute.Text & Schema.Attribute.Required;
-    IsFeatured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
@@ -695,6 +694,8 @@ export interface ApiNewsNews extends Struct.CollectionTypeSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 250;
       }>;
+    IsFeaturedNews: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<false>;
     createdAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
